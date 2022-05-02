@@ -1,0 +1,22 @@
+[Unit]
+Description=Apache Kafka Broker
+Documentation=https://kafka.apache.org/documentation.html
+Requires=network.target
+After=network.target
+  
+[Service]
+Type=simple
+User=kafka
+Group=kafka
+Environment="JMX_PORT=9999"
+Environment="KAFKA_HEAP_OPTS=-Xmx4g -Xms4g"
+Environment=LOG_DIR=/var/log/kafka
+Environment="KAFKA_JMX_OPTS=-Djava.rmi.server.hostname=0.0.0.0 -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.local.only=false -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.net.preferIPv4Stack=true"
+ExecStart=/opt/kafka/bin/kafka-server-start.sh /etc/kafka/conf/server.properties
+ExecStop=/opt/kafka/bin/kafka-server-stop.sh
+LimitNOFILE=100000
+TimeoutStopSec=180
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

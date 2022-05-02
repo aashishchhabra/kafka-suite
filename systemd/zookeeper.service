@@ -1,0 +1,17 @@
+[Unit]
+Description=Apache ZooKeeper Service
+Documentation=http://zookeeper.apache.org
+Requires=network.target
+After=network.target
+
+[Service]
+Type=simple
+User=zookeeper
+Group=kafka
+Environment="KAFKA_HEAP_OPTS=-Xmx1g -Xms1g"
+Environment=LOG_DIR=/var/log/zookeeper
+ExecStart=/opt/kafka/bin/zookeeper-server-start.sh /etc/zookeeper/conf/zookeeper.properties
+ExecStop=/opt/kafka/bin/zookeeper-server-stop.sh /etc/zookeeper/conf/zookeeper.properties
+
+[Install]
+WantedBy=multi-user.target
