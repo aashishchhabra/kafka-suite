@@ -8,7 +8,6 @@ This script is designed to simplify Kafka operations by setting up authenticatio
 - [Installation](#installation)
 - [Operations](#operations)
 - [Examples](#examples)
-- [License](#license)
 
 ## Prerequisites
 
