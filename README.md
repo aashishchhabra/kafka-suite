@@ -7,9 +7,6 @@ This repository provides scripts and configurations to set up a Kafka cluster wi
 - [Prerequisites](#prerequisites)
 - [Repository Structure](#repository-structure)
 - [Usage](#usage)
-- [Configuration](#configuration)
-- [Systemd Files](#systemd-files)
-- [Ansible Commands](#ansible-commands)
 
 
 ## Prerequisites
