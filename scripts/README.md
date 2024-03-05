@@ -40,19 +40,21 @@ List ACLs: Lists ACLs (Access Control Lists) on the Kafka cluster.
 
    ```bash
    ./kafka_operations.sh
-
+   ```
 Follow the prompts and select the operation "list topics" to see a list of all topics on the Kafka cluster.
 
 ### Example 2: Describe Topic
 
    ```bash
    ./kafka_operations.sh
+   ```
 Follow the prompts, select the operation "describe topics," and provide the topic name when prompted to describe a specific topic.
 
 ### Example 3: List ACLs
 
    ```bash
    ./kafka_operations.sh
+   ```
 Follow the prompts and select the operation "list acls" to see a list of ACLs on the Kafka cluster.
 
 
